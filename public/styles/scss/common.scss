@@ -1,0 +1,50 @@
+
+
+$custom-font: 'Roboto Slab', serif;
+$link-primary: #000;
+$link-secondary: #737373;
+$link-hover: orange;
+
+// nice color #1abc9c;
+
+$black: #000;
+$secondary-color: lighten($black, 30%);
+
+
+.btn{
+    background: none;
+    border: 3px solid $black;
+    border-radius: 10px;
+    text-align: center;
+    color:$black;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover{
+        background: #fff;
+        color: $black;
+        border-color: $link-hover;
+        transition: all 0.3s ease;
+    }
+
+    &__large{
+        padding: 15px 20px;
+    }
+}
+
+@mixin respond-to ($val, $query) {
+    @media ($val: $query) {
+        @content
+    }
+}
+
+@include respond-to(max-width,480px){
+    .container-fluid{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .header--hidden{
+        display: none;
+    }
+}

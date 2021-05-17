@@ -1,0 +1,78 @@
+<div class="col-md-12">
+    <div class="cart">
+        <h1>Cart {{cartLenght}} items</h1>
+        <div class="cart__left">
+            <table class="cart__table">
+                <tr>
+                    <th>
+                        Product info
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                </tr>
+                <tr ng-repeat="item in cartProducts">
+                    <td>
+                        <div class="cart__table__image hidden-xs hidden-sm">
+                            <img ng-src="{{item.image}}" alt="" width="80px;"/>
+                        </div>
+
+                        <div class="cart__table__title">
+                            <div class="cart__table__title__name">
+                                {{item.title}} <strong>{{item.brand}}</strong>
+                            </div>
+                            <ul>
+                                <li><label>Color:</label> <span>{{item.color}}</span></li>
+                                <li><label>Size:</label> <span>{{item.size}}</span></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cart__table__price">
+                            {{item.price | currency}}
+                            <div class="cart__table__price--old" ng-if="item.oldPrice !== 0" ng-hide="item.oldPrice === item.price">
+                                {{item.oldPrice | currency}}
+                            </div>
+                        </div>
+                        <div class="cart__table__remove">
+                            <a href="#"ng-click="removeFromCart($index)">
+                                <span class="glyphicon glyphicon-remove"></span>
+                                remove
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="cart__right">
+            <div class="cart__summary">
+                <div class="cart__summary__title">
+                    Summary
+                </div>
+
+                    <div class="cart__summary__coupon">
+                         <label>Discount coupon:</label>
+                         <input type="text" name="name" value="">
+                         <input type="button" name="name" value="ok" class="btn">
+                    </div>
+                    <div class="cart__summary__sum_info">
+                        <ul>
+                            <li>Summary: <span> <b>{{oldPriceSum | currency}}</b></span></li>
+                            <li>Discount: <span class="">{{saleSize | currency}} ({{salePercent}}%)</span></li>
+                            <li>Shipment: <span> <b>Free shipment</b></span></li>
+                        </ul>
+                    </div>
+                    <div class="cart__summary__sum">
+                        <span class="hidden-sm hidden-xs">Summary:</span>
+                        <strong>{{priceSum | currency}}</strong>
+                    </div>
+                    <div class="cart__summary__confirm">
+                        <a href="/order" class="btn btn__large" ng-click="">next</a>
+                    </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>

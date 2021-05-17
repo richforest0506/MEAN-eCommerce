@@ -1,0 +1,51 @@
+$primary-color: #8d8d8d;
+$black: #000;
+
+.footer{
+
+    margin-top: 25px;
+    padding: 15px 0;
+    float:left;
+    width:100%;
+    border-top: 1px solid #e5e5e5;
+
+    @include respond-to(max-width,480px) {
+        padding:15px 0;
+        margin-bottom: 0;
+        border-top: none;
+        // background: #efefef;
+        margin-top:0;
+    }
+
+    ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        li{
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+    }
+
+    a{
+        color: lighten($black, 15%);
+    }
+
+    &__header{
+        font-weight: bold;
+        text-transform: uppercase;
+        color: lighten($black, 65%);
+        margin-bottom: 15px;
+    }
+
+}
+
+.social{
+    width: 48px;
+    height: 48px;
+    border: 2px solid $black;
+    float: left;
+    border-radius: 50%;
+    margin-right: 10px;
+}

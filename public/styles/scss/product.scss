@@ -1,0 +1,273 @@
+@import "common.scss";
+
+.dbug{
+    border:1px solid #000;
+}
+
+.product{
+
+    // Images
+    &__image{
+        position: relative;
+        float: left;
+        width: 55%;
+
+        @include respond-to(max-width,480px) {
+            width: 100%;
+            float: right;
+        }
+    }
+
+    &__image__preview{
+        position: absolute;
+        left:0;
+        width:100px;
+        z-index: 10;
+
+        @include respond-to(max-width,480px) {
+            width:100%;
+            bottom:0;
+            height: 160px;
+            overflow: hidden;
+        }
+
+        li{
+            margin-bottom: 10px;
+            list-style: none;
+
+            @include respond-to(max-width,480px) {
+                display: inline-block;
+                margin-right: 10px;
+
+                &:last-child{
+                    margin: 0
+                }
+            }
+        }
+    }
+
+    &__main__image{
+        position: relative;
+        margin-left: 110px;
+        top:0;
+        width: auto;
+        z-index: 5;
+
+        @include respond-to(max-width,480px) {
+            margin-bottom: 170px;
+            margin-left: 0;
+            // padding-right: 10px;
+            margin-top: 150px;
+            width:100%;
+        }
+
+
+        img{
+            width: 100%;
+        }
+    }
+
+    // Product anotation
+    &__anotation{
+        float: right;
+        width:45%;
+        padding-left: 15px;
+
+        @include respond-to(max-width,480px) {
+            width: 100%;
+            float: left;
+            padding-left: 0;
+        }
+
+        &__content{
+            width:450px;
+            margin: 0 auto;
+
+            @include respond-to(max-width,480px) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__id{
+        text-align: center;
+        text-transform: uppercase;
+        color: lighten($black, 60%);
+    }
+
+    h1{
+        font-size: 1.875em;
+        line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: center;
+        color: lighten($black, 60%);
+        font-family: $custom-font;
+
+        @include respond-to(max-width,480px) {
+            position: absolute;
+            top:0;
+        }
+
+        span{
+            color: $black;
+        }
+    }
+
+    &__price{
+        font-size: 1.25em;
+        text-align: center;
+        font-family: $custom-font;
+
+        @include respond-to(max-width,480px) {
+            position: absolute;
+            top:100px;
+            text-align: center;
+            width: 95%;
+        }
+    }
+
+    &__description{
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 25px 0;
+        margin:25px 0;
+        font-size: 0.9em;
+        margin-bottom: 25px;
+        color:lighten($black, 40%);
+    }
+
+    &__more_info{
+        margin-top: 15px;
+    }
+
+    &__features{
+        li{
+            list-style: none;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__size__select{
+        display: inline-block;
+        padding:13px 15px;
+        border-radius: 50%;
+        margin-right: 10px;
+        border:3px solid lighten($black, 50%);
+        cursor: pointer;
+
+        &:hover{
+            border-color: orange;
+        }
+
+        &:last-child{
+            margin-right: 0;
+        }
+
+        &--selected{
+            border-color:orange;
+            color:orange;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        a:focus, a:active{
+            text-decoration: none;
+        }
+
+    }
+
+    &__size__grid{
+        position: relative;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 15px;
+
+        &__title{
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+    }
+
+    // Purchase block
+    &__purchase{
+
+        margin: 25px 0;
+        padding: 25px 0;
+        border-top: 1px solid #ccc;
+        background: lighten($black, 98%);
+        border-bottom: 1px solid #ccc;
+
+        &__wishlist{
+            display: inline-block;
+            width: 49%;
+            box-sizing: border-box;
+            padding-left: 15px;
+            position: relative;
+            font-size:0.9em;
+            top:2px;
+            text-transform: uppercase;
+            margin-right: -0.3em;
+        }
+
+        &__addtocart{
+            width: 50%;
+            box-sizing: border-box;
+            display: inline-block;
+            padding-right: 10px;
+            font-family: $custom-font;
+
+            .btn{
+                width: 100%;
+            }
+        }
+
+    }
+}
+
+// TODO: сделать нормально!!!!
+
+.additional__info{
+    font-size: 0.8em;
+    color:$secondary-color;
+
+    &__delivery{
+        width: 31%;
+        float: left;
+        padding-right: 2%;
+
+        &__icon{
+            background: url('../../assets/images/icons.png') 0 0 no-repeat;
+            width: 42px;
+            height: 18px;
+            margin-bottom: 12px;
+        }
+    }
+
+    &__try{
+        width: 31%;
+        padding-right: 2%;
+        float: left;
+
+        &__icon{
+            background: url('../../assets/images/icons.png') 0 -18px no-repeat;
+            width: 42px;
+            height: 20px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__return{
+        width: 32%;
+        float: left;
+
+        &__icon{
+            background: url('../../assets/images/icons.png') 0 -38px no-repeat;
+            width: 42px;
+            height: 22px;
+            margin-bottom: 8px;
+        }
+    }
+}

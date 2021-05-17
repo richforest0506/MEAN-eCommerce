@@ -1,0 +1,184 @@
+@import "common.scss";
+$base-font: 0.9375em;
+$small-font: 0.8125em;
+
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+.db{
+    border: 1px solid #000;
+}
+
+.header{
+    margin: 0 0 25px 0;
+    width: 100%;
+    @include respond-to(max-width,480px) {
+        text-align: center;
+    };
+
+    &__mobile__menu{
+        top:10px;
+        position: absolute;
+        left:15px;
+
+        a{
+            font-size: 24px;
+        }
+    }
+
+    &__logo{
+        &--static{
+            margin-top:6px;
+        }
+    }
+
+    &__menu{
+        position: absolute;
+        top: 60px;
+        font-size: $base-font;
+
+
+        li{
+            display: inline-block;
+            margin-right: 20px;
+        }
+    }
+
+    &__phone{
+        color: $black;
+        position: absolute;
+
+        &__span{
+            font-size: $small-font;
+        }
+    }
+
+
+    &__search{
+        position: absolute;
+        right: 25px;
+        top: 30px;
+    }
+
+}
+
+.header--static{
+    height: 100px;
+    position: relative;
+    padding-top: 10px;
+
+    &:after{
+        content:"";
+        position:absolute;
+        top:60%;
+        left:0;
+        right:0;
+        border-top:solid 1px #efefef;
+        z-index:-1;
+    }
+
+    .header{
+        padding-top: 10px;
+
+        &__phone{
+            font-size: 1.125em;
+            top: 20px;
+        }
+    }
+}
+
+.header--fixed{
+     height: 50px;
+     position: fixed;
+     top:0;
+     z-index: 100;
+     background-color: #ffc941;
+     border:none;
+     padding-top: 0;
+     transition: all .2s ease;
+
+     &:after{
+         content:"";
+         border-top:none;
+     }
+
+
+    .header{
+        padding-top: 0;
+
+        a{
+            color: $black;
+            cursor: pointer !important;
+            text-decoration: underline;
+            border: 1px solid #000
+        }
+
+        &__logo--static{
+            display: none;
+        }
+
+        &__menu{
+            float: left;
+            position: relative;
+            z-index: 3;
+            top:14px;
+            left:30px;
+        }
+
+        &__phone{
+            font-size: 1em;
+            color: $black;
+            position: relative;
+            top: 15px;
+            left: 35px;
+        }
+
+        &__search{
+            right: 0px;
+            top:16px;
+        }
+
+    }
+}
+.fixed-header-fix{
+    padding-top: 127px;
+}
+
+.side__menu{
+    background: #fafafa;
+    border-right: 3px solid #ccc;
+    overflow: hidden;
+    height: 0px;
+    width: 250px;
+    position: fixed;
+    left:0;
+    top:0;
+    z-index: 10000;
+}
+
+.body-moving{
+    position: relative;
+    left: 250px;
+    overflow-x: hidden;
+}
+
+.slideable{
+    a{
+        padding: 15px;
+        display: block;
+    }
+
+    &__title{
+        text-transform: uppercase;
+        padding-left: 15px;
+        margin-top: 25px;
+        font-weight: bold;
+        font-size: 1.25em;
+    }
+    li{
+        border-bottom: 1px solid #efefef;
+    }
+}
